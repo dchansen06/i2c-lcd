@@ -9,12 +9,9 @@ all: status
 
 services:
 	$(CC) $(CFLAGS) $(@).h -o $(@).o
-	echo Updated $(@).o
 
 lcdctl: services
 	$(CC) $(CFLAGS) $(@).c $(SERVICES) -o $(@)
-	echo Updated $(@)
 
 status: lcdctl services
 	$(CC) $(CFLAGS) $(@).c $(SERVICES) -o $(@)
-	echo Updated $(@)
