@@ -14,3 +14,6 @@ lcdctl: services
 
 status: lcdctl services
 	$(CC) $(CFLAGS) $(@).c $(SERVICES) -o $(@)
+
+clean: services lcdctl status
+	rm services lcdctl status
