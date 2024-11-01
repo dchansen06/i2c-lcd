@@ -24,7 +24,6 @@ void printhelp(char *name, char *arg)
 {
 	/* Change these to change the text */
 	static const char * h = "--help, -h\t\t\tShow this help text and exits\n";
-	static const char * v = "--version, -v\t\tShows the version information and exits\n";
 	static const char * status = "status \t\t\tView the status of the lcd systemd program\n";
 	static const char * on = "on \t\t\t\tTurns the lcd display on, or if it is on, power cycles it\t\tRequires authentification\n";
 	static const char * off = "off \t\t\tTurns the lcd display off, or if it is off, power cycles it\t\tRequires authentification\n";
@@ -40,7 +39,6 @@ void printhelp(char *name, char *arg)
 	{
 		printf("Options:\n");
 		printf("%s %s", name, h);
-		printf("%s %s", name, v);
 		printf("%s %s", name, status);
 		printf("%s %s", name, on);
 		printf("%s %s", name, off);
@@ -52,12 +50,6 @@ void printhelp(char *name, char *arg)
 		printf("No man pages are avaliable at this time\n");
 		printf("%s %s\n", name, h);
 		printf("Usage:\n%s [OPTION] --help\t\tShows help text for specific option\n%s help (Optional dashes)\t\tShows all help text\n", name, name);
-	}
-	else if (strcmp(arg, "--version") == 0 || strcmp(arg, "-v") == 0)
-	{
-		printf("Current version: %s\t\tFor more information see %s --version\n", version, name);
-		printf("%s %s\n", name, v);
-		printf("Usage:\n%s --version\n", name);
 	}
 	else if (strcmp(arg, "status") == 0)
 	{
@@ -84,7 +76,6 @@ void printhelp(char *name, char *arg)
 		printf("Invalid command\n");
                 printf("Options:\n");
                 printf("%s %s", name, h);
-                printf("%s %s", name, v);
                 printf("%s %s", name, status);
                 printf("%s %s", name, on);
                 printf("%s %s", name, off);
@@ -119,10 +110,6 @@ int argcontrol(char *name, char *arg, char *help)
 	if (strcmp(arg, "help") == 0 || strcmp(arg, "--help") == 0 || strcmp(arg, "-h") == 0)	//All other options including all help
 	{
 		printhelp(name, "all");
-	}
-	else if (strcmp(arg, "--version") == 0 || strcmp(arg, "-v") == 0)
-	{
-		printf("%s\nVersion: %s\nThis is not for official use. You have been warned\n", name, version);
 	}
 	else if (strcmp(arg, "on") == 0)
 	{
