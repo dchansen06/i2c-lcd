@@ -2,7 +2,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -O3 -pie -fpie
 SERVICES = -L services.o
 
-.SILENT: all services lcdctl status
 .DEFAULT: all
 
 all: status
