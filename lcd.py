@@ -1,18 +1,20 @@
 #!/usr/bin/python3.9
+from time import strftime, sleep;
+from subprocess import run, PIPE;
+from atexit import register;
+from psutil import sensors_temperatures, disk_usage, virtual_memory, cpu_percent;
+import I2C_LCD_driver;
 
 # Map: https://www.spikenzielabs.com/learn/images/new4x20-580.png
 # Tutorial: https://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/
 # Charachters: https://omerk.github.io/lcdchargen/
 # Driver: I2C_LCD_driver.py
 
-import I2C_LCD_driver;
 driver = I2C_LCD_driver.lcd();
 driver.lcd_clear();
 driver.backlight(0);
 
 # Register exit handler while backlight off
-from atexit import register;
-from time import sleep;
 def exit_handler():
 	driver.lcd_clear();
 	driver.lcd_display_string("Exiting...", 2, 4);
@@ -86,9 +88,6 @@ fontdata = [
 	0b11111 ],
 ];
 driver.lcd_load_custom_chars(fontdata);	# Load fontdata
-from psutil import sensors_temperatures, disk_usage, virtual_memory, cpu_percent;
-from time import strftime;
-from subprocess import run, PIPE;
 
 # Prepare special charachters and spinny icons
 driver.lcd_clear();
@@ -123,10 +122,10 @@ while True:
 
 	# Special charachters and fan icon
 	driver.lcd_write(0xDB);	# Location, see map
-	if not "inactive" in run("systemctl is-active networking.service":	# Spinny symbol on
+	if "inactive" not in run("systemctl is-active networking.service"):	# Spinny symbol on
 		driver.lcd_write_char(animation);
 		animation += 1;
-		if (animation == 6):
+		if animation == 6:
 			animation = 1;
 	else:
 		driver.lcd_display_string("X", 4, 7);	# Spinny symbol off
