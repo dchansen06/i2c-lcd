@@ -21,3 +21,16 @@ See [systemd](https://wiki.debian.org/systemd) or [systemd(1)](https://man7.org/
 Should you want to make a desktop icon download your preferred icon and edit `lcd.desktop` to point to it, then also point it to your `lcdctl` binary after following the systemD steps above.
 
 Then move the desktop file to `~/.local/share/applications/lcd.desktop` to add it to the menu, you may need to restart for that to work. See [askubuntu](https://askubuntu.com/q/64222) for more information.
+
+## Subcomponents (top -> bottom)
+### Minimum
+#### I2C_LCD_driver.py
+The backbone driver
+#### lcd.py
+The backbone program
+### Command-line fun (optional)
+Includes the Makefile and lcdctl.c, services.h, and status.c
+#### Desktop (additional)
+Includes a simple desktop file
+#### systemD integration (additional)
+Includes lcd.service, requires command-line fun to be setup
