@@ -1,0 +1,12 @@
+[Unit]
+Description=LCD Control
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+#ExecStart=/path/to/the/lcd.py  # Configure as appropriate
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
