@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/path/to/lcdctl toggle
+Icon=/path/to/lcd.png
+Terminal=false
+Name=LCD Display
+GenericName=LCD Display
+Comment=Turn the I2C controlled LCD display on
+Categories=Utility;
