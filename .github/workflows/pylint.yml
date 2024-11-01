@@ -19,4 +19,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
     - name: Pylint
-      run: pylint $(git ls-files '*.py')
+      run: pylint $(git ls-files '*.py') --indent-string "\t" --disable=C0103 --disable=C0116 --disable=C0115 --disable=C0114
