@@ -1,3 +1,4 @@
+[![Build](https://github.com/dchansen06/i2c-lcd/actions/workflows/build.yml/badge.svg)](https://github.com/dchansen06/i2c-lcd/actions/workflows/build.yml) [![Pylint](https://github.com/dchansen06/i2c-lcd/actions/workflows/pylint.yml/badge.svg)](https://github.com/dchansen06/i2c-lcd/actions/workflows/pylint.yml)
 # i2c-lcd
 A heavily extended version of [Scott Campbell](https://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/)'s version of [DenisFromHR](https://gist.github.com/DenisFromHR/cc863375a6e19dce359d)'s version by [Michael Horne](https://www.recantha.co.uk/blog/?p=4849) for use on the Raspberry Pi. Use at your own risk and discretion, and be careful to not fry your computer (watch the wires you plug in)!
 
