@@ -9,3 +9,8 @@ I am not sure what this code should be licensed as, it was inspired by a lot of 
 
 ## Heads-up
 Do not let this run to long, I recommend setting up a [cron(8)](https://www.man7.org/linux/man-pages/man8/cron.8.html) job so that it turns off every so often... or else you WILL burn out your device
+
+## systemD
+Should you want to allow controlling the file with the various C programs, setup the lcd.service job unit file with the correct path and move it to `/etc/systemd/system/lcd.service`
+
+See [systemd](https://wiki.debian.org/systemd) or [systemd(1)](https://man7.org/linux/man-pages/man1/systemd.1.html) for more information
