@@ -1,7 +1,7 @@
 /* This program is a header file, it is not meant to be run
  *
  * This program provides basic access to all of the services and daemons running
- * that are controlled through the Makefil system, including fand, lcd and apid
+ * that are controlled through the Makefil system, mainly lcd
  *
  * The most likely cause of failure is a missed name file not being updated
  *
